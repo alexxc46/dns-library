@@ -17,12 +17,12 @@ class DnsLibraryServiceProvider extends ServiceProvider {
 
         $this->app->booting(function () {
             $dnsLibrary = $this->app->make('DnsLibrary');
-            $domain = 'github.com';
+            $domain = 'google.com';
             $dnsRecords = $dnsLibrary->getDnsRecords($domain);
 
             $result = [];
             foreach ($dnsRecords as $record) {
-                array_push($result, "Type: " . $record['type'] . ", Value: " . $record['target']);
+                array_push($result, $record);
             }
 
             print_r($result);

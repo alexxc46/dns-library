@@ -6,20 +6,11 @@ class DnsLibrary {
 
     public function getDnsRecords(string $domain): array
     {
-        // return dns_get_record($domain, DNS_ALL);
-        $ipAddress = gethostbyname($domain);
+        $dns = @dns_get_record($domain, DNS_A);
+        if(!$dns){
+            return false;
+        }
 
-
-        // dummy return statement for testing purposes
-        return [
-            [
-                'type' => 'A',
-                'target' => $ipAddress,
-            ],
-            [
-                'type' => 'MX',
-                'target' => $ipAddress,
-            ],
-        ];
+        return $dns;
     }
 }

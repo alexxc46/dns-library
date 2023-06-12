@@ -1,0 +1,23 @@
+{
+    "name": "alexx/dns-library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alexx\\DnsLibrary\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "alexx",
+            "email": "alexxc46@gmail.com"
+        }
+    ],
+    "require": {},
+    "extra":{
+        "laravel": {
+            "providers": [
+                "Alexx\\DnsLibrary\\DnsLibraryServiceProvider"
+            ]
+        }
+    }
+}

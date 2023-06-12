@@ -25,7 +25,7 @@ class DnsLibraryServiceProvider extends ServiceProvider {
                 array_push($result, "Type: " . $record['type'] . ", Value: " . $record['target']);
             }
 
-            dd($result);
+            print_r($result);
         });
     }
 }
